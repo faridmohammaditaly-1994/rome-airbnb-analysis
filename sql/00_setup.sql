@@ -56,10 +56,19 @@ CREATE TABLE rome_project.listings (
     reviews_per_month TEXT
 );
 
--- STEP 4: Load the CSV.
--- Update the file path below to where you saved listings.csv on your machine.
+-- STEP 4: Load the CSV (obtain it first — see data/README.md).
+-- Use ONE of the two options below.
+--
+-- Option A — terminal (psql), run from the repo root. psql's \copy is a
+-- CLIENT-side command, so the relative path resolves from your shell's
+-- working directory:
+--   \copy rome_project.listings FROM 'data/listings.csv' DELIMITER ',' CSV HEADER;
+--
+-- Option B — DBeaver / any server-side COPY. Server-side COPY makes the
+-- PostgreSQL server read the file, so a relative path will NOT work — give
+-- it the ABSOLUTE path to data/listings.csv on your machine:
 COPY rome_project.listings
-FROM '/Users/faridmohammadi/Downloads/listings.csv'
+FROM '/absolute/path/to/rome-airbnb-analysis/data/listings.csv'
 DELIMITER ','
 CSV HEADER;
 
@@ -75,5 +84,5 @@ SELECT
 FROM rome_project.listings;
 
 -- Verify the load:
-SELECT COUNT(*) FROM rome_project.rome;  -- Expected: 376520
+SELECT COUNT(*) FROM rome_project.rome;  -- Expected: 37652
 

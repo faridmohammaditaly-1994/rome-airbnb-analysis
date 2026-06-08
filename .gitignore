@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Data — too large for GitHub; obtained from Inside Airbnb (see data/README.md)
+data/listings.csv
+data/listings.csv.gz
