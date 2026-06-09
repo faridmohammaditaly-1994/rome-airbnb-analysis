@@ -220,3 +220,8 @@ __marimo__/
 # Data — too large for GitHub; obtained from Inside Airbnb (see data/README.md)
 data/listings.csv
 data/listings.csv.gz
+
+# Internal working docs — kept local, not published.
+CLAUDE.md
+PROJECT_PLAN.md
+rome_airbnb_video_production.md
